@@ -4,7 +4,12 @@ import { AccountConsumer, } from "../providers/AccountProvider";
 
 
 class AccountForm extends React.Component {
-  state = { email: "", firstName: "", lastName:"", avatar:""  };
+  state = { 
+    email: this.props.email, 
+    firstName: this.props.firstName, 
+    lastName:this.props.lastName, 
+    avatar: this.props.avatar,  
+  };
 
   handleChange = (e, { name, value }) => this.setState({ 
     [name]: value,
@@ -12,7 +17,8 @@ class AccountForm extends React.Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    
+    const account = {...this.state};
+    this.props.updateAccount(account);
   }
 
   render() {
@@ -70,7 +76,9 @@ const ConnectedAccountForm = (props) => {
       { value => (
         <AccountForm 
           { ...props }
-          username={value.firstName}
+          email={value.email}
+          firstName={value.firstName}
+          lastName={value.lastName}
           avatar={value.avatar}
           updateAccount={value.updateAccount}
 
