@@ -5,12 +5,14 @@ import { AccountConsumer, } from "../providers/AccountProvider";
 
 class AccountForm extends React.Component {
   state = { email: "", firstName: "", lastName:"", avatar:""  };
-  
-  handleChange = (e, { name, value }) => this.setState({ [name]: value,
-   });
+
+  handleChange = (e, { name, value }) => this.setState({ 
+    [name]: value,
+  });
   
   handleSubmit = (e) => {
     e.preventDefault();
+    
   }
 
   render() {
@@ -20,21 +22,21 @@ class AccountForm extends React.Component {
         <Form.Input
             label="Email"
             type="text"
-            name="Email"
+            name="email"
             value={email}
             onChange={this.handleChange}
           />
         <Form.Input
           label="First Name"
           type="text"
-          name="First Name"
+          name="firstName"
           value={firstName}
           onChange={this.handleChange}
         />
         <Form.Input
           label="Last Name"
           type="text"
-          name="Last Name"
+          name="lastName"
           value={lastName}
           onChange={this.handleChange}
         />
