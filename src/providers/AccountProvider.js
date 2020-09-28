@@ -6,7 +6,7 @@ export const AccountConsumer = AccountContext.Consumer;
 
 class AccountProvider extends React.Component {
   state = {
-    email: "Boobs@gmail.com",
+    email: "Test@gmail.com",
     firstName: "Ruby",
     lastName: "Reppson",
     avatar: ":)",
